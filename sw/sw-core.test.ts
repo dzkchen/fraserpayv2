@@ -35,7 +35,7 @@ describe("selectStrategy", () => {
   });
 
   test("serves mutable public assets stale-while-revalidate", () => {
-    for (const pathname of ["/icons/icon-192.png", "/manifest.webmanifest", "/favicon.ico"]) {
+    for (const pathname of ["/icons/icon-192.png", "/manifest.webmanifest", "/icon.svg"]) {
       expect(selectStrategy(nav(pathname, { isNavigate: false }))).toBe(
         STRATEGY.STATIC_STALE_WHILE_REVALIDATE,
       );
@@ -81,7 +81,7 @@ describe("isStaticAsset", () => {
     expect(isStaticAsset("/_next/static/x.js")).toBe(true);
     expect(isStaticAsset("/icons/icon-512.png")).toBe(true);
     expect(isStaticAsset("/manifest.webmanifest")).toBe(true);
-    expect(isStaticAsset("/favicon.ico")).toBe(true);
+    expect(isStaticAsset("/icon.svg")).toBe(true);
     expect(isStaticAsset("/wallet")).toBe(false);
     expect(isStaticAsset("/_next/data/x.json")).toBe(false);
   });

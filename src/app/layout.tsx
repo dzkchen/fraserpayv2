@@ -25,10 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: { card: "summary_large_image", title: SHARE_TITLE, description: SITE_DESCRIPTION },
     icons: {
-      icon: [
-        { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
-        { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
-      ],
+      icon: [{ url: "/icon.svg", sizes: "any", type: "image/svg+xml" }],
       apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
     },
   };

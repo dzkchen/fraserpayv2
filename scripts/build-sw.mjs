@@ -8,7 +8,7 @@ const swDir = join(root, "sw");
 const publicDir = join(root, "public");
 
 function collectPrecacheUrls() {
-  const urls = ["/manifest.webmanifest", "/favicon.ico"];
+  const urls = ["/manifest.webmanifest", "/icon.svg"];
   for (const file of readdirSync(join(publicDir, "icons")).sort()) {
     urls.push(`/icons/${file}`);
   }

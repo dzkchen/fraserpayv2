@@ -72,6 +72,14 @@ describe("root metadata", () => {
     expect(meta.twitter).toMatchObject({ card: "summary_large_image" });
   });
 
+  test("uses the FraserPay F SVG for browser icons", async () => {
+    mockRequest("/");
+    const meta = await generateMetadata();
+    expect(meta.icons).toMatchObject({
+      icon: [{ url: "/icon.svg", sizes: "any", type: "image/svg+xml" }],
+    });
+  });
+
   test("ignores a spoofed Host header rather than emitting it as canonical", async () => {
     headers.mockResolvedValue(
       new Headers({ host: "evil.example.ca/<script>", "x-pathname": "/wallet" }),

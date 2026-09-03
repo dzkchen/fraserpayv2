@@ -21,7 +21,7 @@ export function isStaticAsset(pathname) {
     pathname.startsWith("/_next/static/") ||
     pathname.startsWith("/icons/") ||
     pathname === "/manifest.webmanifest" ||
-    pathname === "/favicon.ico"
+    pathname === "/icon.svg"
   );
 }
 
